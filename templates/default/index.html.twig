@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hotel LaCasserai{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="card-deck mb-3">
+    {% for room in room %}
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body" style="padding: 0;">
+          <ul class="list-unstyled mt-3 mb-4" style="margin-top: 0!important;">
+            <li><img class="img-fluid" src={{ vich_uploader_asset(room, 'imageFile') }}></td></li>
+          </ul>
+          <div class="text" style="padding-left: 20px; padding-bottom: 20px;">
+            <h4 class="my-0 font-weight-normal">{{ room.name }}</h4>
+            <p>Starting from <strong>€{{ room.prijs }}/Night</strong></p>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><i class="fas fa-user"></i> {{ room.capacity }} Guests </li>
+            </ul>
+            <a style="width: 100px;" class="btn btn-primary" href="/view/{{ room.id }}">View</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

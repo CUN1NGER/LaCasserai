@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Room details{% endblock %}
+
+{% block body %}
+{% for room in room %}
+<div class="container">
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{ room.name }}
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src={{ vich_uploader_asset(room, 'imageFile') }}>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">Description</h3>
+      <p>{{ room.description }}</p>
+      <h3 class="my-3">For €{{ room.prijs }}/Night</h3>
+      {{ include ('default/_form.html.twig') }}
+    </div>
+
+  </div>
+  <!-- /.row -->
+  </div>
+{% endfor %}
+{% endblock %}
