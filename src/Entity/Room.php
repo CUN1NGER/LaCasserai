@@ -39,6 +39,11 @@ class Room
      */
     private $room_nr;
 
+        /**
+     * @ORM\Column(type="boolean")
+     */
+    public $is_popular;
+
     /**
      * @ORM\Column(type="integer")
      */
