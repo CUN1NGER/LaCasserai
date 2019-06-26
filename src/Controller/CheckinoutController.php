@@ -5,7 +5,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CheckinoutController extends AbstractController
 {
     /**
-     * @Route("/checkinout", name="checkinout")
+     * @Route("/admin/checkinout", name="checkinout")
      */
     public function index()
     {
